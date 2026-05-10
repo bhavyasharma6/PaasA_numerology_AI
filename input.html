@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+  input.html - PaasA Numerology AI User Input Form
+  Author: Bhavya Sharma | Enrollment: 2450850380 | MCSP-232
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PaasA – Begin Your Reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="/">PaasA <span>Numerology</span> AI</a>
+    <ul class="navbar-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/input">Get Reading</a></li>
+      <li><a href="/history">History</a></li>
+    </ul>
+  </nav>
+
+  <div class="loading-overlay" id="loadingOverlay" style="display:none;">
+    <div class="spinner"></div>
+    <div class="loading-text" id="loadingText">Calculating your cosmic blueprint...</div>
+  </div>
+
+  <div class="page-wrapper">
+    <div class="form-section">
+
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <div style="font-size:3rem; margin-bottom:0.75rem; animation:float 3s ease infinite;">✦</div>
+        <h1 class="form-title">Begin Your Reading</h1>
+        <p class="form-subtitle">
+          Enter your details below and let the cosmic numbers reveal your destiny
+        </p>
+      </div>
+
+      <div class="glass-card">
+        <form id="numerologyForm" novalidate>
+
+          <!-- Full Name -->
+          <div class="form-group">
+            <label class="form-label" for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              class="form-control"
+              placeholder="Enter your full birth name"
+              autocomplete="name"
+              maxlength="100"
+              required
+            />
+            <div class="form-error" id="nameError"></div>
+            <div style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.25rem;">
+              Use your full birth name for accurate Chaldean calculation
+            </div>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="form-group">
+            <label class="form-label" for="dob">Date of Birth</label>
+            <input
+              type="text"
+              id="dob"
+              name="dob"
+              class="form-control"
+              placeholder="DD-MM-YYYY"
+              pattern="\d{2}-\d{2}-\d{4}"
+              maxlength="10"
+              required
+            />
+            <div class="form-error" id="dobError"></div>
+            <div style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.25rem;">
+              Format: DD-MM-YYYY (e.g. 15-03-1995)
+            </div>
+          </div>
+
+          <!-- Gender -->
+          <div class="form-group">
+            <label class="form-label">Gender</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="gender" value="Male" required/>
+                ♂ Male
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="Female"/>
+                ♀ Female
+              </label>
+            </div>
+            <div class="form-error" id="genderError"></div>
+            <div style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.25rem;">
+              Required for accurate Kua Number (Feng Shui) calculation
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.5rem;">
+            ✦ Reveal My Cosmic Blueprint
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Info cards -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem;">
+        <div style="padding:1rem; background:rgba(255,215,0,0.05);
+                    border:1px solid rgba(255,215,0,0.15); border-radius:12px;">
+          <div style="font-size:1.2rem; margin-bottom:0.4rem;">🔒</div>
+          <div style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.5;">
+            Your data is stored securely in our database and never shared with third parties.
+          </div>
+        </div>
+        <div style="padding:1rem; background:rgba(0,229,255,0.05);
+                    border:1px solid rgba(0,229,255,0.15); border-radius:12px;">
+          <div style="font-size:1.2rem; margin-bottom:0.4rem;">⚡</div>
+          <div style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.5;">
+            Powered by Google Gemini AI for real-time personalized cosmic insights.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Auto-format DOB input (DD-MM-YYYY)
+    document.getElementById('dob').addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 2) v = v.slice(0,2) + '-' + v.slice(2);
+      if (v.length > 5) v = v.slice(0,5) + '-' + v.slice(5);
+      e.target.value = v.slice(0, 10);
+    });
+  </script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+  history.html - PaasA Numerology AI Session History
+  Author: Bhavya Sharma | Enrollment: 2450850380 | MCSP-232
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PaasA – Reading History</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="/">PaasA <span>Numerology</span> AI</a>
+    <ul class="navbar-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/input">Get Reading</a></li>
+      <li><a href="/history" class="active">History</a></li>
+    </ul>
+  </nav>
+
+  <div class="loading-overlay" id="loadingOverlay" style="display:none;">
+    <div class="spinner"></div>
+    <div class="loading-text" id="loadingText">Loading history...</div>
+  </div>
+
+  <div class="page-wrapper">
+    <div class="history-container">
+
+      <div style="text-align:center; margin-bottom:2rem;">
+        <div style="font-size:2.5rem; margin-bottom:0.5rem;">📜</div>
+        <h1 class="history-title">Reading History</h1>
+        <p class="history-subtitle">All your past numerology readings in one place</p>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control"
+          placeholder="Search by name..."
+          oninput="searchHistory()"
+        />
+        <a href="/input" class="btn btn-primary">+ New Reading</a>
+      </div>
+
+      <!-- Sessions List -->
+      <div id="sessionsList">
+        <div class="empty-state">
+          <div class="empty-icon">🌌</div>
+          <p>Loading your cosmic history...</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+  <script>
+    // Initialize history page on load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadHistory();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+  index.html - PaasA Numerology AI Landing Page
+  Author: Bhavya Sharma | Enrollment: 2450850380 | MCSP-232
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PaasA Numerology AI – AI-Powered Cosmic Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="/">PaasA <span>Numerology</span> AI</a>
+    <ul class="navbar-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/input">Get Reading</a></li>
+      <li><a href="/history">History</a></li>
+    </ul>
+  </nav>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay" style="display:none;">
+    <div class="spinner"></div>
+    <div class="loading-text" id="loadingText">Consulting the cosmos...</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="page-wrapper">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-icon">✦</div>
+      <h1 class="hero-title">PaasA Numerology AI</h1>
+      <p class="hero-subtitle">AI-Powered Cosmic Insights</p>
+      <p class="hero-desc">
+        Discover the hidden patterns in your name and date of birth.
+        Experience ancient Chaldean numerology enhanced by Google Gemini AI —
+        your personal cosmic blueprint revealed through Lo Shu Grid analysis,
+        core number calculations, and intelligent spiritual guidance.
+      </p>
+      <div class="hero-actions">
+        <a href="/input" class="btn btn-primary">✦ Begin Your Reading</a>
+        <a href="/history" class="btn btn-secondary">View Past Readings</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="section-heading">What PaasA Reveals</h2>
+        <div class="features-grid">
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon">🔢</div>
+            <h3 class="feature-title" style="color:var(--color-accent-gold);">Core Numbers</h3>
+            <p class="feature-desc">
+              Calculate your Name Number (Chaldean), Mulank (Driver),
+              Bhagyank (Life Path), and Kua Number (Feng Shui) with
+              precision and accuracy.
+            </p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title" style="color:var(--color-accent-purple);">Lo Shu Grid</h3>
+            <p class="feature-desc">
+              Interactive 3×3 Lo Shu Grid showing present and missing
+              numbers, frequency counts, and six-plane analysis (Mental,
+              Emotional, Practical, Thought, Will, Action).
+            </p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3 class="feature-title" style="color:var(--color-accent-cyan);">AI Consultation</h3>
+            <p class="feature-desc">
+              Context-aware conversation with Google Gemini AI, trained
+              on your personal numerology data. Ask about destiny,
+              relationships, career, and spiritual growth — 24/7.
+            </p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon">💾</div>
+            <h3 class="feature-title" style="color:var(--color-accent-pink);">Session History</h3>
+            <p class="feature-desc">
+              All readings saved in our database. Revisit past sessions,
+              track your spiritual journey, and share your cosmic
+              blueprint with loved ones.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section">
+      <div class="container">
+        <h2 class="section-heading-sub">How It Works</h2>
+        <div class="steps-row">
+
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-label">Enter Name &amp; DOB</div>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-label">AI Calculates Numbers</div>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-label">View Lo Shu Grid</div>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-label">Chat with AI Oracle</div>
+          </div>
+
+        </div>
+        <div style="text-align:center; margin-top:2.5rem;">
+          <a href="/input" class="btn btn-primary" style="font-size:1.1rem; padding:1rem 2.5rem;">
+            Start Your Cosmic Journey ✦
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end page-wrapper -->
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
